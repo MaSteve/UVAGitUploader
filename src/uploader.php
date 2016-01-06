@@ -38,10 +38,11 @@ if (!empty($problems)) {
 
     $message = $title != NULL? messageFormatter($number[0], $title): $problems[0];
 
+    exec("git -C ".REPOSITORY_DIR. " pull origin master");
     exec("mv ".PROBLEMS_DIR.$problems[0]." ".REPOSITORY_DIR);
     exec("git -C ".REPOSITORY_DIR. " add ".$problems[0]);
     exec("git -C ".REPOSITORY_DIR. " commit -m "."\"$message\"");
-    exec("git push origin master");
+    exec("git -C ".REPOSITORY_DIR. " push origin master");
 } else if (NOTIFICATIONS) {
     mail(EMAIL, SUBJECT, MESSAGE);
 }
