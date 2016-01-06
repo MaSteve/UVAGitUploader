@@ -1,7 +1,7 @@
 <?php
 use Hunter\Hunter;
 
-require "__DIR__/../vendor/autoload.php";
+require __DIR__."/../vendor/autoload.php";
 
 define(REPOSITORY_DIR, "");
 define(PROBLEMS_DIR, ""); // We need two different folders.
