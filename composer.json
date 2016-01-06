@@ -1,0 +1,5 @@
+{
+    "require": {
+        "kaspars/hunter": "^1.2"
+    }
+}

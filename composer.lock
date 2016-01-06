@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "ecfb81cfb17247bd6f03faace7245d5d",
+    "content-hash": "844cb4afbd59df1ef5f2dedbb6a60dff",
+    "packages": [
+        {
+            "name": "kaspars/hunter",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kasparsklavins/Hunter.git",
+                "reference": "ae5656482cacc2eceecf30d3b305994445d784bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kasparsklavins/Hunter/zipball/ae5656482cacc2eceecf30d3b305994445d784bc",
+                "reference": "ae5656482cacc2eceecf30d3b305994445d784bc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Hunter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kaspars",
+                    "email": "klavins21@gmail.com"
+                }
+            ],
+            "description": "Hunter is an easy to use uHunt wrapper to receive information from UVA servers.",
+            "homepage": "https://github.com/kasparsklavins/Hunter",
+            "keywords": [
+                "competitive programming",
+                "online judge",
+                "uhunt",
+                "uva"
+            ],
+            "time": "2015-09-14 19:33:37"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
