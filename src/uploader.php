@@ -14,9 +14,13 @@ define(SUBJECT, "Empty problems folder");
 define(MESSAGE, "You have a problem LOL");
 
 define(COMMIT_MESSAGE_PATTERN, "%d %s");
+define(COMMIT_WITH_URL, true);
+define(COMMIT_COMMENT_PATTERN, "\n\nhttps://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=%d");
 
-function messageFormatter($number, $title) {
-    return sprintf(COMMIT_MESSAGE_PATTERN, $number, $title);
+function messageFormatter($number, $title, $id = NULL) {
+    $commit = sprintf(COMMIT_MESSAGE_PATTERN, $number, $title);
+    if ($id != NULL) $commit .= sprintf(COMMIT_COMMENT_PATTERN, $id);
+    return $commit;
 }
 
 $hunter = new Hunter();
@@ -34,14 +38,16 @@ foreach ($ls as $file) {
 if (!empty($problems)) {
     preg_match(PROBLEM_NUMBER_REGEX_PATTERN, $problems[0], $number);
 
-    $title = $hunter->problem($number[0], "num")["title"];
+    $problem = $hunter->problem($number[0], "num");
+    $title = $problem["title"];
+    $id = $problem["id"];
 
-    $message = $title != NULL? messageFormatter($number[0], $title): $problems[0];
+    $message = $title != NULL? COMMIT_WITH_URL? messageFormatter($number[0], $title, $id): messageFormatter($number[0], $title): $problems[0];
 
     exec("git -C ".REPOSITORY_DIR. " pull origin master");
     exec("mv ".PROBLEMS_DIR.$problems[0]." ".REPOSITORY_DIR);
     exec("git -C ".REPOSITORY_DIR. " add ".$problems[0]);
-    exec("git -C ".REPOSITORY_DIR. " commit -m "."\"$message\"");
+    exec("git -C ".REPOSITORY_DIR. " commit -m "."$\"$message\"");
     exec("git -C ".REPOSITORY_DIR. " push origin master");
 } else if (NOTIFICATIONS) {
     mail(EMAIL, SUBJECT, MESSAGE);
