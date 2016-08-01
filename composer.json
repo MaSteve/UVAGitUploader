@@ -1,5 +1,6 @@
 {
     "require": {
-        "kaspars/hunter": "^1.2"
+        "kaspars/hunter": "^1.2",
+        "vlucas/phpdotenv": "^2.3"
     }
 }
