@@ -13,7 +13,7 @@ UVAGitUploader is a PHP script used to commit UVa problems to a GitHub repositor
 ```
 git config credential.helper store
 ```
-- Run the script. The first time you run it, it will prompt you for your GitHub username and password.
+- Run the script. The first time you run it, it will prompt you for your GitHub username and password. **Warning**: It is necessary to run the script from the project root, *outside* the `src/` folder.
 ```
 php src/uploader.php
 ```
