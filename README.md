@@ -4,7 +4,7 @@
 UVAGitUploader is a PHP script used to commit UVa problems to a GitHub repository.
 
 ##Installation and configuration
-- Install and configure `git`.
+- Install and configure `git`, `php` and `composer`.
 - Clone this repository in your computer: `git clone https://github.com/MaSteve/UVAGitUploader.git`.
 - Run `composer install`.
 - Modify `.env.example` to include your UVa problems local repository path and your problems folder path. Modify any other configuration option to suit your needs. Once done, rename `.env.example` to `.env`.
