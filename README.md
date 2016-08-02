@@ -4,7 +4,7 @@
 UVAGitUploader is a PHP script used to commit UVa problems to a GitHub repository.
 
 ##Installation and configuration
-- Install and configure `git`.
+- Install and configure `git`, `php` and `composer`.
 - Clone this repository in your computer: `git clone https://github.com/MaSteve/UVAGitUploader.git`.
 - Run `composer install`.
 - Modify `.env.example` to include your UVa problems local repository path and your problems folder path. Modify any other configuration option to suit your needs. Once done, rename `.env.example` to `.env`.
@@ -13,11 +13,11 @@ UVAGitUploader is a PHP script used to commit UVa problems to a GitHub repositor
 ```
 git config credential.helper store
 ```
-- Run the script. The first time you run it, it will prompt you for your GitHub username and password.
+- Run the script. The first time you run it, it will prompt you for your GitHub username and password. **Warning**: It is necessary to run the script from the project root, *outside* the `src/` folder.
 ```
 php src/uploader.php
 ```
 - *Tip*: Add a cron job to commit automatically. For example, to upload [daily at 10:00 A.M.](http://crontab.guru/#00_10_*_*_*), run `crontab -e` and add this to the end of the file:
 ```
-/path/to/UVAGitUploader/src/uploader.php 00 10 * * *
+00 10 * * * cd /path/to/UVAGitUploader; php src/uploader.php
 ```

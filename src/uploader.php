@@ -1,6 +1,6 @@
 <?php
 
-require '../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 use Hunter\Hunter;
 
@@ -54,7 +54,7 @@ function commitMessageFormatter($number, $title, $id = null)
 
 function loadConfig()
 {
-    $dotenv = new Dotenv\Dotenv('../');
+    $dotenv = new Dotenv\Dotenv(__DIR__.'/../');
     $dotenv->load();
     $dotenv->required([
         'REPOSITORY_DIR',
